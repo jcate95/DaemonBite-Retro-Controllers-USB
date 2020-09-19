@@ -63,8 +63,8 @@ typedef union
 		uint16_t bTrigger:1;       // bit  1
 
 		uint16_t bTopLeft:1;       // bit  2
-		uint16_t bTopRightUp:1;   // bit  3
-		uint16_t bTopRightDown:1;// bit  4
+		uint16_t bTopRightUp:1;    // bit  3
+		uint16_t bTopRightDown:1;  // bit  4
 
 		uint16_t bA:1;             // bit  5
 		uint16_t bB:1;             // bit  6
@@ -73,15 +73,15 @@ typedef union
 		
 		uint16_t bShift:1;         // bit  9
 
-		uint16_t x:10;            // bits 10-19
-		uint16_t y:10;            // bits 20-29
+		uint16_t x:10;             // bits 10-19
+		uint16_t y:10;             // bits 20-29
 		uint16_t zRot:7;           // bits 30-36
-		uint16_t throttle:6;      // bits 37-42
+		uint16_t throttle:6;       // bits 37-42
 
-		uint16_t hat:4;           // bits 43-46
+		uint16_t hat:4;            // bits 43-46
 
-		uint16_t reserved:1;      // bit 47
-		uint16_t parity:1;        // bit 48
+		uint16_t reserved:1;       // bit 47
+		uint16_t parity:1;         // bit 48
 	};
 
 	// the ints are used to access the struct-data at bit-level
@@ -522,6 +522,7 @@ void identifyControllers()
   unsigned long millisNow = 0;
 
   // Check for Gravis Gamepad Pro on both "channels"
+  // ---------------------------
   millisNow = millis();
   // Reset counters
   counter[0] = 0;
@@ -557,6 +558,7 @@ void identifyControllers()
   //       before doing an analog read.
 
   // Check for Sidewinder range of controllers (port 1 only)
+  // ---------------------------
   if(mode[0] == None) //&& (PIND & B00000101) == 0) // Check if both button 1 and 2 pins are low
   {
     if(axisValueInitial[0][0] < 800)
@@ -621,10 +623,12 @@ void identifyControllers()
   }
 
   // Set Joy1 as analog?
+  // ---------------------------
   if(mode[0] == None && axisPot[0] != UNDEFINED)
     mode[0] = Analog1P;
 
   // Set Joy2 as analog?
+  // ---------------------------
   if(mode[0] == GrIp && mode[1] == None && axisPot[2] != UNDEFINED)
     mode[1] = Analog1P;
 }

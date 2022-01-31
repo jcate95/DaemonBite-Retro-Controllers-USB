@@ -33,25 +33,23 @@ static const uint8_t _hidReportDescriptor[] PROGMEM = {
     
       0x05, 0x09,                       // USAGE_PAGE (Button)
       0x19, 0x01,                       // USAGE_MINIMUM (Button 1)
-      0x29, 0x0c,                       // USAGE_MAXIMUM (Button 12)
+      0x29, 0x10,                       // USAGE_MAXIMUM (Button 16)
       0x15, 0x00,                       // LOGICAL_MINIMUM (0)
       0x25, 0x01,                       // LOGICAL_MAXIMUM (1)
-      0x95, 0x0c,                       // REPORT_COUNT (12)
+      0x95, 0x10,                       // REPORT_COUNT (16)
       0x75, 0x01,                       // REPORT_SIZE (1)
       0x81, 0x02,                       // INPUT (Data,Var,Abs)
-
-      0x95, 0x01,                       // REPORT_COUNT (1) ; pad out the bits into a number divisible by 8
-      0x75, 0x04,                       // REPORT_SIZE (4)
-      0x81, 0x03,                       // INPUT (Const,Var,Abs)
     
       0x05, 0x01,                       // USAGE_PAGE (Generic Desktop)
       0x09, 0x01,                       // USAGE (pointer)
       0xa1, 0x00,                       // COLLECTION (Physical) 
         0x09, 0x30,                       // USAGE (X)
         0x09, 0x31,                       // USAGE (Y)
-        0x15, 0xff,                       // LOGICAL_MINIMUM (-1)
-        0x25, 0x01,                       // LOGICAL_MAXIMUM (1)
-        0x95, 0x02,                       // REPORT_COUNT (2)
+        0x09, 0x32,                       // USAGE (X)
+        0x09, 0x33,                       // USAGE (Y)        
+        0x15, 0xFF,                       // LOGICAL_MINIMUM (-128)
+        0x25, 0x7F,                       // LOGICAL_MAXIMUM (127)
+        0x95, 0x04,                       // REPORT_COUNT (4)
         0x75, 0x08,                       // REPORT_SIZE (8)
         0x81, 0x02,                       // INPUT (Data,Var,Abs)
       0xc0,                             // END_COLLECTION
@@ -134,8 +132,10 @@ bool Gamepad_::setup(USBSetup& setup)
 
 void Gamepad_::reset()
 {
-  _GamepadReport.X = 0;
-  _GamepadReport.Y = 0;
+  _GamepadReport.LX = 0;
+  _GamepadReport.LY = 0;
+  _GamepadReport.RX = 0;
+  _GamepadReport.RY = 0;
   _GamepadReport.buttons = 0;
   this->send();
 }

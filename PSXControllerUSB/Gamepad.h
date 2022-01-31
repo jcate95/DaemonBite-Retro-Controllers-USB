@@ -32,8 +32,10 @@ extern const char* gp_serial;
 
 typedef struct {
   uint16_t buttons;
-  int8_t X;
-  int8_t Y;  
+  int8_t LX;
+  int8_t LY;
+  int8_t RX;
+  int8_t RY;  
 } GamepadReport;
 
 

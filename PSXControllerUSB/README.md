@@ -1,3 +1,7 @@
+This version is a very substantial rewrite of the DaemonBite code branch for PSX controllers. It no longer makes use of Psx.c and Psx.h to read from the controller, instead making use of PsxNewLib. This has the advantage of providing functions for analog sticks out of the box. This is mostly a rewrite of the provided code example from PsxNewLib which provides PSX controller functionality via USB, but has been rewritten to provide a usb descriptor which MiSTer should be able to understand, and uses the DaemonBite Gamepad.cpp and Gamepad.h files for the USB functionality. Latency testing has not been performed as such, but the experience seems responsive from my limited testing.
+
+###ORIGINAL README BELOW###
+
 # DaemonBite PSX Controller To USB Adapter
 ## Introduction
 This is a simple to build adapter for connecting PSX controllers to USB. Currently it supports normal digital PSX controllers, analog sticks are not supported.

@@ -1,4 +1,5 @@
 /** FILE IS A DERIVATIVE WORK OF PsxNewLib and DaemonBite-Retro-Controllers-USB
+GNU GPL Version 3 License is provided with this code
 CHANGES TO THE CODE COPYRIGHT (C) 2022 by jcate95 **/
 
 #include <PsxControllerBitBang.h>

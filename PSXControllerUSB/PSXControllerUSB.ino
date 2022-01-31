@@ -52,22 +52,22 @@ void loop () {
 
 				if (psx.getLeftAnalog (x, y)) {
           if (x != sticksPrev[0] || x != sticksPrev[0]) {
-            Gamepad._GamepadReport.LX = map(x, ANALOG_MIN_VALUE, ANALOG_MAX_VALUE, -128, 127);
+            Gamepad._GamepadReport.LX = map(x, ANALOG_MIN_VALUE, ANALOG_MAX_VALUE, -100, 100);
             sticksPrev[0] = x;
           }
           if (y != sticksPrev[1] || y != sticksPrev[1]) {
-            Gamepad._GamepadReport.LY = map(y, ANALOG_MIN_VALUE, ANALOG_MAX_VALUE, -128, 127);
+            Gamepad._GamepadReport.LY = map(y, ANALOG_MIN_VALUE, ANALOG_MAX_VALUE, -100, 100);
             sticksPrev[1] = y;
           }
 				}
 
         if (psx.getRightAnalog (x, y)) {
           if (x != sticksPrev[2] || x != sticksPrev[2]) {
-            Gamepad._GamepadReport.RX = map(x, ANALOG_MIN_VALUE, ANALOG_MAX_VALUE, -128, 127);
+            Gamepad._GamepadReport.RX = map(x, ANALOG_MIN_VALUE, ANALOG_MAX_VALUE, -100, 100);
             sticksPrev[2] = x;
           }
           if (y != sticksPrev[3] || y != sticksPrev[3]) {
-            Gamepad._GamepadReport.RY = map(y, ANALOG_MIN_VALUE, ANALOG_MAX_VALUE, -128, 127);
+            Gamepad._GamepadReport.RY = map(y, ANALOG_MIN_VALUE, ANALOG_MAX_VALUE, -100, 100);
             sticksPrev[3] = y;
           }
         }

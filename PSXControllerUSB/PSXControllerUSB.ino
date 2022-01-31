@@ -1,29 +1,5 @@
-/*******************************************************************************
- * This file is part of PsxNewLib.                                             *
- *                                                                             *
- * Copyright (C) 2019-2020 by SukkoPera <software@sukkology.net>               *
- *                                                                             *
- * PsxNewLib is free software: you can redistribute it and/or                  *
- * modify it under the terms of the GNU General Public License as published by *
- * the Free Software Foundation, either version 3 of the License, or           *
- * (at your option) any later version.                                         *
- *                                                                             *
- * PsxNewLib is distributed in the hope that it will be useful,                *
- * but WITHOUT ANY WARRANTY; without even the implied warranty of              *
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the               *
- * GNU General Public License for more details.                                *
- *                                                                             *
- * You should have received a copy of the GNU General Public License           *
- * along with PsxNewLib. If not, see http://www.gnu.org/licenses.              *
- *******************************************************************************
- *
- * This sketch shows how the library can be used to turn a PSX controller into
- * an USB one, using an Arduino Leonardo or Micro and the excellent
- * ArduinoJoystickLibrary.
- *
- * For details on ArduinoJoystickLibrary, see
- * https://github.com/MHeironimus/ArduinoJoystickLibrary.
- */
+/** FILE IS A DERIVATIVE WORK OF PsxNewLib and DaemonBite-Retro-Controllers-USB
+CHANGES TO THE CODE COPYRIGHT (C) 2022 by jcate95 **/
 
 #include <PsxControllerBitBang.h>
 #include "Gamepad.h"

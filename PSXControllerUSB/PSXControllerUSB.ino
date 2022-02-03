@@ -18,10 +18,6 @@ PsxControllerBitBang<PIN_PS2_ATT, PIN_PS2_CMD, PIN_PS2_DAT, PIN_PS2_CLK> psx;
 
 boolean haveController = false;
 
-#define deadify(var, thres) (abs (var) > thres ? (var) : 0)
-
-const byte ANALOG_DEAD_ZONE = 50U;
-
 Gamepad_ Gamepad;
 uint16_t buttons = 0;
 uint16_t buttonsPrev = 0;
